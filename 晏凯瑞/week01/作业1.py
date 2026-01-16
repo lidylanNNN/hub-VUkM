@@ -17,7 +17,7 @@ model = KNeighborsClassifier()
 model.fit(input_feature, dataset[1].values)
 
 client = OpenAI(
-    api_key="sk-9uQMkALI1OeBiZ6uJCuhgACy3pC5YfMXUlAeMoAtd90lLeGQ",  # 账号绑定，用来计费的
+    api_key="sk-9uQMkALI1OeBiZ6uxxxxxAtd90lLeGQ",  # 账号绑定，用来计费的
     base_url="https://api.moonshot.cn/v1",
 )
 
