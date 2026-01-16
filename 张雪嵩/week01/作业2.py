@@ -31,7 +31,7 @@ def test_classify_by_qwllm(text: str) -> str:
     :return:
     """
     client = OpenAI(
-        api_key="sk-6a38ccb6fc234175887710e6324ecaf2", # 账号绑定的
+        api_key="sk-6a38ccb6fcxxxx0e6324ecaf2", # 账号绑定的
         # 大模型厂商的地址
         base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
     )
