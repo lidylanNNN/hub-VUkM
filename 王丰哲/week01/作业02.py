@@ -32,7 +32,7 @@ model2 = tree.DecisionTreeClassifier() #加载sklearn中的内置决策树训练
 model2.fit(input_feature, data["label"].values)
 
 client = OpenAI(
-    api_key = "sk-831e7efd8a9449e396343b68a4e9547f",
+    api_key = "sk-831exxxxxb68a4e9547f",
 
     base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1",
 )
