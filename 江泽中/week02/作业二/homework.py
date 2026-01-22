@@ -19,10 +19,9 @@ y = torch.from_numpy(y_numpy).float()
 print("sin函数数据生成完成。")
 print("---" * 10)
 
-
-# 多层网络定义
+# 多层网络定义 - 减少网络复杂度
 class SinNet(torch.nn.Module):
-    def __init__(self, hidden_size=64):
+    def __init__(self, hidden_size=16):  # 减小隐藏层大小
         super(SinNet, self).__init__()
         self.net = torch.nn.Sequential(
             torch.nn.Linear(1, hidden_size),
@@ -37,9 +36,9 @@ class SinNet(torch.nn.Module):
 
 
 # 创建模型、损失函数和优化器
-model = SinNet(hidden_size=64)
+model = SinNet()
 criterion = torch.nn.MSELoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01, weight_decay=0.001)
 
 print(f"模型结构: {model}")
 print("---" * 10)
@@ -70,6 +69,7 @@ with torch.no_grad():
 plt.figure(figsize=(12, 6))
 plt.scatter(X_numpy, y_numpy, label='True sin(x)', color='blue', alpha=0.5, s=10)
 plt.plot(X_numpy, y_predicted, label='Network prediction', color='red', linewidth=2)
+plt.plot(X_numpy, np.sin(X_numpy), '--', label='Pure sin(x)', color='green', alpha=0.7)
 plt.xlabel('x')
 plt.ylabel('sin(x)')
 plt.title('Neural Network Fitting sin(x)')
