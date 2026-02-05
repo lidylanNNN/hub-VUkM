@@ -330,7 +330,7 @@ def load_model_from_epoch(epoch_num):
 
 
 # 测试加载特定epoch模型
-print("\n=== 加载模型测试 ===")
+print("\n==================================================== 加载模型测试 ===============================================================")
 # # 加载第1个epoch的模型
 # model_epoch1 = load_model_from_epoch(1)
 # if model_epoch1:
@@ -349,7 +349,7 @@ print("\n=== 加载模型测试 ===")
 #         print(f"预测结果: {result['predicted_label']}")
 #         print(f"置信度: {result['confidence']:.4f}")
 
-str = "为节日来临做准备很期待"
+str = "一想到明天，我就对明天充满了希望"
 results = predict_texts(model, [str])
 result = results[0]
 print(f"预测结果: {result['predicted_label']}")
